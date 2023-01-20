@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akscluster-dc6f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akscluster-dc6f"
+  template:
+    metadata:
+      labels:
+        app: "akscluster-dc6f"
+    spec:
+      containers:
+        - name: "akscluster-dc6f"
+          image: "vramakacr2.azurecr.io/akscluster"
+          ports:
+          - containerPort: 80
